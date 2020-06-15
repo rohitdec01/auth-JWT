@@ -13,15 +13,14 @@ repositories {
 }
 
 dependencies {
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
-    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
-    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'org.projectlombok:lombok:1.18.12'
 }
 
 test {
