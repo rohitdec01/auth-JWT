@@ -30,6 +30,7 @@ public class AuthController {
             @RequestBody AuthenticationRequest authenticationRequest
     ) throws Exception {
         try {
+            System.out.println(authenticationRequest.getUserName() + "   "+ authenticationRequest.getPassword());
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                     authenticationRequest.getUserName(), authenticationRequest.getPassword())
             );
