@@ -9,11 +9,13 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin()
 public class AuthController {
     private AuthenticationManager authenticationManager;
     private UserDetailService userDetailService;
@@ -30,7 +32,6 @@ public class AuthController {
             @RequestBody AuthenticationRequest authenticationRequest
     ) throws Exception {
         try {
-            System.out.println(authenticationRequest.getUserName() + "   "+ authenticationRequest.getPassword());
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                     authenticationRequest.getUserName(), authenticationRequest.getPassword())
             );
