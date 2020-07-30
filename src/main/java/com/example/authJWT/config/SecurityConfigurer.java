@@ -24,6 +24,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
         this.jwtRequestFilter = jwtRequestFilter;
     }
 
+
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailService).passwordEncoder(passwordEncoder());
@@ -34,7 +35,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
         // Note: check how to enable csrf(below)
         httpSecurity.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/authenticate").permitAll()
+                .antMatchers("/authenticate","/test").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

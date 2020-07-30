@@ -1,0 +1,3 @@
+name: auth-JWT-pulumi
+runtime: nodejs
+description: A minimal Azure TypeScript Pulumi program
