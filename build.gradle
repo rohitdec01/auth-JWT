@@ -21,6 +21,11 @@ dependencies {
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
     implementation 'org.projectlombok:lombok:1.18.12'
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation 'com.h2database:h2:1.4.200'
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8')
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: '2.29'
+    compile('org.apache.commons:commons-lang3:3.9')
 }
 
 test {
